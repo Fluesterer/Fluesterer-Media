@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infos Über Fluesterer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(150, 0, 0); /* Dunklerer Hintergrund */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Hintergrund wird hier verschwommen und dunkler */
+        .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dunklerer Filter */
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffcc00;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: rgba(0, 184, 255, 0.7); /* Halbtransparent */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 234, 255, 0.7);
+            transform: translateY(-3px);
+        }
+
+        .back-button:active {
+            background: rgba(0, 184, 255, 0.7);
+        }
+
+        /* Link für FluestererYT */
+        .yt-link {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .yt-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="background-blur"></div> <!-- Hintergrund Blur -->
+
+    <h1>Über mich</h1>
+    <p>Hallo,</p>
+    <p>Ich bin 12 Jahre alt. Ich bin ein YouTuber und betreibe den Kanal <a href="https://www.youtube.com/@FluestererYT" class="yt-link" target="_blank">FluestererYT</a>. Auf meinem Kanal dreht sich alles um Minecraft und Roblox.</p>
+    <p>In Minecraft bin ich als Builder tätig und erstelle beeindruckende Bauwerke. In Roblox Studio arbeite ich als Developer, Scripter und Builder, um spannende Spiele und Welten zu erschaffen.</p>
+    <p>Ich freue mich, dich auf meinem Kanal oder in den Spielen zu sehen! 😊</p>
+
+    <a href="index.html" class="back-button">Zurück zur Hauptseite</a>
+
+</body>
+</html>
