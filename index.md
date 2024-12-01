@@ -76,9 +76,8 @@
             text-decoration: underline;
         }
 
-        /* Styling for partner links */
+        /* Partner Links Styling */
         #partner-links {
-            display: none;
             color: white;
             text-align: center;
             margin-top: 20px;
@@ -86,6 +85,11 @@
         #partner-links h2 {
             color: #ffcc00;
             margin-bottom: 20px;
+        }
+        #partner-links .partner-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         #partner-links .partner-btn {
             background: linear-gradient(145deg, #00b3b3, #00ffcc);
@@ -95,7 +99,6 @@
             text-decoration: none;
             border-radius: 8px;
             margin: 10px;
-            display: inline-block;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
@@ -120,32 +123,21 @@
             <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
-            <a href="javascript:void(0);" onclick="showPartnerLinks()">Partner Links</a>
+        </div>
+    </div>
+
+    <div id="partner-links">
+        <h2>Partner Links</h2>
+        <div class="partner-btn-container">
+            <a href="https://discord.gg/partner-discord-link" class="partner-btn" target="_blank">Partner Discord Server</a>
+            <a href="https://www.youtube.com/channel/partner-youtube-channel" class="partner-btn" target="_blank">Partner YouTube Kanal</a>
+            <a href="https://discord.gg/schleimiger-discord-server" class="partner-btn" target="_blank">Schleimiger´s Discord Server</a>
         </div>
     </div>
 
     <div class="footer">
         <p>Made <br>by <br>Fluesterer</p>
     </div>
-
-    <div id="partner-links">
-        <h2>Alle Partner Links</h2>
-        <a href="https://discord.gg/partner-discord-link" class="partner-btn" target="_blank">Partner Discord Server</a>
-        <a href="https://www.youtube.com/channel/partner-youtube-channel" class="partner-btn" target="_blank">Partner YouTube Kanal</a>
-        <a href="https://discord.gg/schleimiger-discord-server" class="partner-btn" target="_blank">Schleimiger´s Discord Server</a>
-    </div>
-
-    <script>
-        function showPartnerLinks() {
-            var linksDiv = document.getElementById("partner-links");
-            // Toggle visibility of partner links section
-            if (linksDiv.style.display === "none" || linksDiv.style.display === "") {
-                linksDiv.style.display = "block";
-            } else {
-                linksDiv.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
