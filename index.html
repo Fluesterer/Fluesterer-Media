@@ -54,6 +54,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            justify-content: flex-end; /* Aligns the links to the right */
         }
 
         .link-container a {
@@ -80,19 +81,19 @@
             transform: translateY(0);
         }
 
-        /* New partner link section with right adjustment */
+        /* New partner link section with left adjustment */
         .partner-links {
             margin-top: 30px;
             text-align: center;
             color: #ffcc00;
             font-size: 1.5em;
             margin-bottom: 15px;
-            margin-right: 15%; /* Moves the partner section to the right */
+            margin-left: 15%; /* Moves the partner section to the left */
         }
 
         .partner-link-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             gap: 15px;
             flex-direction: row;
         }
@@ -146,6 +147,7 @@
 
     <div class="background-blur"></div> <!-- Blurred background -->
     
+    <!-- Main Links Container on the right -->
     <div class="container">
         <h1>Fluesterer Media</h1>
         <div class="link-container">
@@ -156,7 +158,7 @@
         </div>
     </div>
 
-    <!-- Partner Links Section moved to the right -->
+    <!-- Partner Links Section on the left -->
     <div class="partner-links">Partner Links</div>
     <div class="partner-link-container">
         <a href="https://discord.gg/SchleimigerDiscord" target="_blank">Schleimiger's Discord Server</a>
