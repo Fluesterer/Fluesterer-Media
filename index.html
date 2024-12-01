@@ -79,6 +79,45 @@
             transform: translateY(0);
         }
 
+        .partner-links {
+            margin-top: 30px;
+            text-align: center;
+            color: #ffcc00;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .partner-link-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .partner-link-container a {
+            display: block;
+            padding: 18px;
+            background: linear-gradient(145deg, #00b8ff, #00eaff);
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        .partner-link-container a:hover {
+            background: linear-gradient(145deg, #00eaff, #00b8ff);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .partner-link-container a:active {
+            background: linear-gradient(145deg, #00b8ff, #00eaff);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+        }
+
         .footer {
             position: absolute;
             bottom: 20px;
@@ -111,6 +150,13 @@
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
         </div>
+    </div>
+
+    <!-- Partner Links Section -->
+    <div class="partner-links">Partner Links</div>
+    <div class="partner-link-container">
+        <a href="https://discord.gg/SchleimigerDiscord" target="_blank">Schleimiger's Discord Server</a>
+        <!-- Der andere Button wird entfernt -->
     </div>
 
     <div class="footer">
