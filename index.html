@@ -9,44 +9,64 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            background: rgb(64, 64, 64);
+            background: linear-gradient(180deg, rgba(64, 64, 64, 1) 0%, rgba(0, 0, 0, 1) 100%);
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             flex-direction: column;
-            background: rgb(150, 0, 0);
-            background-size: cover;
-            background-position: center;
+            position: relative;
         }
 
-        .background-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            z-index: -1;
+        /* Positionierung der Buttons oben links */
+        .header-buttons {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-buttons a {
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .header-buttons a:hover {
+            color: #ffcc00;
+            border-color: #ffcc00;
+        }
+
+        .header-buttons a:active {
+            color: #ff6a00;
+        }
+
+        .header-buttons a.active {
+            border-bottom: 3px solid #ffcc00; /* Unterstrich für den aktiven Button */
         }
 
         .container {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 450px;
             text-align: center;
+            margin-top: 80px;
         }
 
         h1 {
             font-size: 2.5em;
             color: #ffcc00;
             margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .link-container {
@@ -56,85 +76,57 @@
         }
 
         .link-container a {
+            display: block;
             padding: 18px;
-            background: rgba(0, 184, 255, 0.7);
+            background: linear-gradient(145deg, #ff6a00, #ff8e00);
             color: white;
             font-size: 1.2em;
             text-decoration: none;
             border-radius: 8px;
             transition: all 0.3s ease;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         .link-container a:hover {
-            background: rgba(0, 234, 255, 0.7);
+            background: linear-gradient(145deg, #ff8e00, #ff6a00);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
             transform: translateY(-3px);
         }
 
         .link-container a:active {
-            background: rgba(0, 184, 255, 0.7);
+            background: linear-gradient(145deg, #ff6a00, #ff8e00);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
             transform: translateY(0);
         }
 
-        /* Button für "Über mich" */
-        .active {
-            text-decoration: underline;
-            color: white;
-        }
-
-        /* Home-Button */
-        .home-button {
-            padding: 10px 20px;
-            background: rgba(0, 184, 255, 0.7);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-        }
-
-        .home-button:hover {
-            background: rgba(0, 234, 255, 0.7);
-            transform: translateY(-3px);
-        }
-
-        .home-button:active {
-            background: rgba(0, 184, 255, 0.7);
-            transform: translateY(0);
-        }
-
-        /* Button für "Über mich" oben rechts */
-        .over-me-link {
-            position: fixed;
-            top: 20px;
+        .footer {
+            position: absolute;
+            bottom: 20px;
             right: 20px;
-            font-size: 1.3em;
+            font-size: 0.9em;
             color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            text-align: right;
         }
 
-        .over-me-link:hover {
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Wenn wir auf der "Über mich" Seite sind, sollte der Button nicht unterstrichen sein */
-        .over-me-link-active {
-            text-decoration: none;
         }
 
     </style>
 </head>
 <body>
 
-    <div class="background-blur"></div> <!-- Hintergrund unscharf -->
+    <div class="header-buttons">
+        <!-- Home Button -->
+        <a href="index.html" class="active">Home</a>
+        <!-- Über mich Button -->
+        <a href="ueber-mich.html">Über mich</a>
+    </div>
 
     <div class="container">
         <h1>FluestererSocial Media Links</h1>
@@ -146,13 +138,10 @@
         </div>
     </div>
 
-    <!-- Link für "Über mich", hier haben wir die Klasse hinzugefügt, die nur auf der index.html-Seite angezeigt wird -->
-    <a href="ueber-mich.html" class="over-me-link active">Über mich</a> 
-
-    <!-- Home-Button -->
-    <a href="index.html" class="home-button">
-        🏠 Home
-    </a>
+    <div class="footer">
+        <p>Made <br>by <br>Fluesterer</p>
+    </div>
 
 </body>
 </html>
+
