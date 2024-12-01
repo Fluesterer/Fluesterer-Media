@@ -80,8 +80,9 @@
         }
 
         /* Button für "Über mich" */
-        .link-container .active {
+        .active {
             text-decoration: underline;
+            color: white;
         }
 
         /* Home-Button */
@@ -94,6 +95,9 @@
             font-size: 1.2em;
             transition: all 0.3s ease;
             margin-top: 20px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
         }
 
         .home-button:hover {
@@ -104,6 +108,26 @@
         .home-button:active {
             background: rgba(0, 184, 255, 0.7);
             transform: translateY(0);
+        }
+
+        /* Button für "Über mich" oben rechts */
+        .over-me-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 1.3em;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .over-me-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Wenn wir auf der "Über mich" Seite sind, sollte der Button nicht unterstrichen sein */
+        .over-me-link-active {
+            text-decoration: none;
         }
 
     </style>
@@ -119,11 +143,16 @@
             <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
-            <a href="ueber-mich.html" class="active">Infos Über Fluesterer</a> <!-- Der Button für "Über mich", der unterstrichen wird, wenn er aktiv ist -->
         </div>
-
-        <a href="index.html" class="home-button">Home</a> <!-- Der "Home"-Button -->
     </div>
+
+    <!-- Link für "Über mich", hier haben wir die Klasse hinzugefügt, die nur auf der index.html-Seite angezeigt wird -->
+    <a href="ueber-mich.html" class="over-me-link active">Über mich</a> 
+
+    <!-- Home-Button -->
+    <a href="index.html" class="home-button">
+        🏠 Home
+    </a>
 
 </body>
 </html>
