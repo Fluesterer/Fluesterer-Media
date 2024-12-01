@@ -56,6 +56,7 @@
             <a href="https://www.roblox.com" target="_blank">Roblox Profil</a>
             <a href="https://www.roblox.com/groups" target="_blank">Roblox Gruppe</a>
             <a href="https://discord.gg/your-discord-link" target="_blank">Discord Server</a>
+            <a href="https://github.com/your-github-username" target="_blank">GitHub Profil</a> <!-- GitHub Link hier -->
             <a href="https://www.example.com" target="_blank">Weitere Links</a>
         </div>
     </main>
