@@ -18,6 +18,7 @@
             height: 100vh;
             flex-direction: column;
             position: relative;
+            overflow-x: hidden;
         }
 
         /* Positionierung der Buttons oben links */
@@ -27,6 +28,7 @@
             left: 20px;
             display: flex;
             gap: 20px;
+            z-index: 10; /* Stellt sicher, dass die Buttons immer oben sind */
         }
 
         .header-buttons a {
@@ -60,7 +62,7 @@
             width: 90%;
             max-width: 450px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 80px; /* Platz für die fixierten Buttons */
         }
 
         h1 {
@@ -146,5 +148,3 @@
 
 </body>
 </html>
-
-
