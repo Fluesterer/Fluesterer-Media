@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -80,7 +81,7 @@
         #partner-links {
             color: white;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         #partner-links h2 {
             color: #ffcc00;
