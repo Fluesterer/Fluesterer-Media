@@ -14,7 +14,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             background: url('https://file:///C:/Users/henry/Downloads/YT-Banner.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -30,16 +29,25 @@
             z-index: -1; /* Keeps the blur behind the content */
         }
 
+        /* Flex-Container für Hauptbereich und Partnerbereich nebeneinander */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Hauptbereich */
         .container {
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 450px;
+            width: 45%;
+            margin-right: 20px; /* Abstand zwischen Hauptbereich und Partnerbereich */
             text-align: center;
             backdrop-filter: blur(10px);
-            margin-left: 15%; /* Moves the main container a bit more to the left */
         }
 
         h1 {
@@ -54,7 +62,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            justify-content: flex-end; /* Aligns the links to the right */
         }
 
         .link-container a {
@@ -81,21 +88,30 @@
             transform: translateY(0);
         }
 
-        /* New partner link section with left adjustment */
+        /* Partnerbereich */
+        .partner-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
         .partner-links {
             margin-top: 30px;
             text-align: center;
             color: #ffcc00;
             font-size: 1.5em;
             margin-bottom: 15px;
-            margin-left: 15%; /* Moves the partner section to the left */
         }
 
         .partner-link-container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 15px;
-            flex-direction: row;
+            flex-direction: column;
         }
 
         .partner-link-container a {
@@ -108,7 +124,6 @@
             border-radius: 8px;
             transition: all 0.3s ease;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-            width: 45%;
         }
 
         .partner-link-container a:hover {
@@ -147,23 +162,29 @@
 
     <div class="background-blur"></div> <!-- Blurred background -->
     
-    <!-- Main Links Container on the right -->
-    <div class="container">
-        <h1>Fluesterer Media</h1>
-        <div class="link-container">
-            <a href="https://www.youtube.com/@FluestererYT" target="_blank">YouTube Kanal besuchen</a>
-            <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
-            <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
-            <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
+    <!-- Content Wrapper for Main and Partner Links -->
+    <div class="content-wrapper">
+        <!-- Main Links Container -->
+        <div class="container">
+            <h1>Fluesterer Media</h1>
+            <div class="link-container">
+                <a href="https://www.youtube.com/@FluestererYT" target="_blank">YouTube Kanal besuchen</a>
+                <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
+                <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
+                <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
+            </div>
+        </div>
+
+        <!-- Partner Links Container -->
+        <div class="partner-container">
+            <div class="partner-links">Partner Links</div>
+            <div class="partner-link-container">
+                <a href="https://discord.gg/SchleimigerDiscord" target="_blank">Schleimiger's Discord Server</a>
+            </div>
         </div>
     </div>
 
-    <!-- Partner Links Section on the left -->
-    <div class="partner-links">Partner Links</div>
-    <div class="partner-link-container">
-        <a href="https://discord.gg/SchleimigerDiscord" target="_blank">Schleimiger's Discord Server</a>
-    </div>
-
+    <!-- Footer -->
     <div class="footer">
         <p>Made <br>by <br>Fluesterer</p>
     </div>
