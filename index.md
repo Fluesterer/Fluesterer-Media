@@ -75,6 +75,8 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        /* Styling for partner links */
         #partner-links {
             display: none;
             color: white;
@@ -136,7 +138,8 @@
     <script>
         function showPartnerLinks() {
             var linksDiv = document.getElementById("partner-links");
-            if (linksDiv.style.display === "none") {
+            // Toggle visibility of partner links section
+            if (linksDiv.style.display === "none" || linksDiv.style.display === "") {
                 linksDiv.style.display = "block";
             } else {
                 linksDiv.style.display = "none";
