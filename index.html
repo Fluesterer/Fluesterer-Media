@@ -35,10 +35,11 @@
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 90%;
+            width: 80%;
             max-width: 450px;
             text-align: center;
             backdrop-filter: blur(10px);
+            margin-left: 15%; /* Moves the main container a bit more to the left */
         }
 
         h1 {
@@ -79,18 +80,21 @@
             transform: translateY(0);
         }
 
+        /* New partner link section with right adjustment */
         .partner-links {
             margin-top: 30px;
             text-align: center;
             color: #ffcc00;
             font-size: 1.5em;
             margin-bottom: 15px;
+            margin-right: 15%; /* Moves the partner section to the right */
         }
 
         .partner-link-container {
             display: flex;
             justify-content: space-between;
             gap: 15px;
+            flex-direction: row;
         }
 
         .partner-link-container a {
@@ -152,11 +156,10 @@
         </div>
     </div>
 
-    <!-- Partner Links Section -->
+    <!-- Partner Links Section moved to the right -->
     <div class="partner-links">Partner Links</div>
     <div class="partner-link-container">
         <a href="https://discord.gg/SchleimigerDiscord" target="_blank">Schleimiger's Discord Server</a>
-        <!-- Der andere Button wird entfernt -->
     </div>
 
     <div class="footer">
