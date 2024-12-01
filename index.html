@@ -7,16 +7,29 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #6e7e8f, #3b4e62);
             margin: 0;
             padding: 0;
+            height: 100vh;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: white;
             flex-direction: column;
+            background: url('https://file:///C:/Users/henry/Downloads/YT-Banner.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
+
+        .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: -1; /* Keeps the blur behind the content */
+        }
+
         .container {
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
@@ -26,8 +39,8 @@
             max-width: 450px;
             text-align: center;
             backdrop-filter: blur(10px);
-            margin-bottom: 20px;
         }
+
         h1 {
             font-size: 2.5em;
             color: #ffcc00;
@@ -35,11 +48,13 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         .link-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         .link-container a {
             display: block;
             padding: 18px;
@@ -51,16 +66,19 @@
             transition: all 0.3s ease;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         }
+
         .link-container a:hover {
             background: linear-gradient(145deg, #ff8e00, #ff6a00);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
             transform: translateY(-3px);
         }
+
         .link-container a:active {
             background: linear-gradient(145deg, #ff6a00, #ff8e00);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
             transform: translateY(0);
         }
+
         .footer {
             position: absolute;
             bottom: 20px;
@@ -69,54 +87,22 @@
             color: white;
             text-align: right;
         }
+
         .footer a {
             color: #ffcc00;
             text-decoration: none;
         }
+
         .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Partner Links Styling */
-        #partner-links {
-            color: white;
-            text-align: center;
-            margin-top: 40px;
-        }
-        #partner-links h2 {
-            color: #ffcc00;
-            margin-bottom: 20px;
-        }
-        #partner-links .partner-btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        #partner-links .partner-btn {
-            background: linear-gradient(145deg, #00b3b3, #00ffcc);
-            padding: 15px;
-            color: white;
-            font-size: 1.2em;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        #partner-links .partner-btn:hover {
-            background: linear-gradient(145deg, #00ffcc, #00b3b3);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-3px);
-        }
-        #partner-links .partner-btn:active {
-            background: linear-gradient(145deg, #00b3b3, #00ffcc);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
 
+    <div class="background-blur"></div> <!-- Blurred background -->
+    
     <div class="container">
         <h1>Fluesterer Media</h1>
         <div class="link-container">
@@ -124,15 +110,6 @@
             <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
-        </div>
-    </div>
-
-    <div id="partner-links">
-        <h2>Partner Links</h2>
-        <div class="partner-btn-container">
-            <a href="https://discord.gg/partner-discord-link" class="partner-btn" target="_blank">Partner Discord Server</a>
-            <a href="https://www.youtube.com/channel/partner-youtube-channel" class="partner-btn" target="_blank">Partner YouTube Kanal</a>
-            <a href="https://discord.gg/schleimiger-discord-server" class="partner-btn" target="_blank">Schleimiger´s Discord Server</a>
         </div>
     </div>
 
