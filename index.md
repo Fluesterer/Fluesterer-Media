@@ -75,6 +75,38 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        #partner-links {
+            display: none;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #partner-links h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        #partner-links .partner-btn {
+            background: linear-gradient(145deg, #00b3b3, #00ffcc);
+            padding: 15px;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        #partner-links .partner-btn:hover {
+            background: linear-gradient(145deg, #00ffcc, #00b3b3);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+        #partner-links .partner-btn:active {
+            background: linear-gradient(145deg, #00b3b3, #00ffcc);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -86,7 +118,7 @@
             <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
-            <a href="javascript:void(0);" onclick="showLinks()">Alle Links</a>
+            <a href="javascript:void(0);" onclick="showPartnerLinks()">Partner Links</a>
         </div>
     </div>
 
@@ -94,16 +126,16 @@
         <p>Made <br>by <br>Fluesterer</p>
     </div>
 
-    <div id="all-links" style="display: none; color: white; text-align: center; margin-top: 20px;">
-        <p><a href="https://www.youtube.com/@FluestererYT" target="_blank">fluestereryt kanal besuchen</a></p>
-        <p><a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">roblox profil besuchen</a></p>
-        <p><a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">roblox gruppe besuchen</a></p>
-        <p><a href="https://discord.gg/HWtUsY8Cqd" target="_blank">discord server besuchen</a></p>
+    <div id="partner-links">
+        <h2>Alle Partner Links</h2>
+        <a href="https://discord.gg/partner-discord-link" class="partner-btn" target="_blank">Partner Discord Server</a>
+        <a href="https://www.youtube.com/channel/partner-youtube-channel" class="partner-btn" target="_blank">Partner YouTube Kanal</a>
+        <a href="https://discord.gg/schleimiger-discord-server" class="partner-btn" target="_blank">Schleimiger´s Discord Server</a>
     </div>
 
     <script>
-        function showLinks() {
-            var linksDiv = document.getElementById("all-links");
+        function showPartnerLinks() {
+            var linksDiv = document.getElementById("partner-links");
             if (linksDiv.style.display === "none") {
                 linksDiv.style.display = "block";
             } else {
