@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  Fluesterer Social Stuff  </title>
+    <title>Fluesterer Social Stuff</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -119,19 +119,36 @@
             text-decoration: underline;
         }
 
+        /* YouTube Video Container - unten rechts */
+        .video-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            height: 180px;
+            z-index: 5; /* Überlagert den Rest der Seite */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
     </style>
 </head>
 <body>
 
-   <div class="header-buttons">
-    <!-- Home Button -->
-    <a href="index.html" class="active">Home</a>
-    <!-- Über mich Button -->
-    <a href="ueber-mich.html">Über mich</a>
-    <!-- Partner Button -->
-    <a href="partner.html">Partner</a>
-    <!-- Freunde Button -->
-    <a href="freunde.html">Freunde</a> <!-- Neuer Button -->
+    <div class="header-buttons">
+        <!-- Home Button -->
+        <a href="index.html" class="active">Home</a>
+        <!-- Über mich Button -->
+        <a href="ueber-mich.html">Über mich</a>
+        <!-- Partner Button -->
+        <a href="partner.html">Partner</a>
+        <!-- Freunde Button -->
+        <a href="freunde.html">Freunde</a> <!-- Neuer Button -->
     </div>
 
     <div class="container">
@@ -147,6 +164,12 @@
 
     <div class="footer">
         <p>Made <br>by <br>Fluesterer</p>
+    </div>
+
+    <!-- YouTube Video Container -->
+    <div class="video-container">
+        <!-- Ersetze die Video-ID durch die ID deines neuesten YouTube-Videos -->
+        <iframe src="https://www.youtube.com/embed/c6HO0hxOonU&t=6s?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
 </body>
