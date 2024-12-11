@@ -21,14 +21,13 @@
             overflow-x: hidden;
         }
 
-        /* Positionierung der Buttons oben links */
         .header-buttons {
             position: fixed;
             top: 20px;
             left: 20px;
             display: flex;
             gap: 20px;
-            z-index: 10; /* Stellt sicher, dass die Buttons immer oben sind */
+            z-index: 10;
         }
 
         .header-buttons a {
@@ -38,20 +37,11 @@
             padding: 10px;
             border: 2px solid transparent;
             transition: all 0.3s;
-            position: relative;
         }
 
         .header-buttons a:hover {
             color: #ffcc00;
             border-color: #ffcc00;
-        }
-
-        .header-buttons a:active {
-            color: #ff6a00;
-        }
-
-        .header-buttons a.active {
-            border-bottom: 3px solid #ffcc00; /* Unterstrich für den aktiven Button */
         }
 
         .container {
@@ -62,7 +52,7 @@
             width: 90%;
             max-width: 450px;
             text-align: center;
-            margin-top: 80px; /* Platz für die fixierten Buttons */
+            margin-top: 80px;
         }
 
         h1 {
@@ -89,18 +79,6 @@
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .link-container a:hover {
-            background: linear-gradient(145deg, #ff8e00, #ff6a00);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-3px);
-        }
-
-        .link-container a:active {
-            background: linear-gradient(145deg, #ff6a00, #ff8e00);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-        }
-
         .footer {
             position: absolute;
             bottom: 20px;
@@ -115,18 +93,13 @@
             text-decoration: none;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* YouTube Video Container - unten rechts */
         .video-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 320px;
             height: 180px;
-            z-index: 5; /* Überlagert den Rest der Seite */
+            z-index: 5;
         }
 
         .video-container iframe {
@@ -135,20 +108,15 @@
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-
     </style>
 </head>
 <body>
 
     <div class="header-buttons">
-        <!-- Home Button -->
         <a href="index.html" class="active">Home</a>
-        <!-- Über mich Button -->
         <a href="ueber-mich.html">Über mich</a>
-        <!-- Partner Button -->
         <a href="partner.html">Partner</a>
-        <!-- Freunde Button -->
-        <a href="freunde.html">Freunde</a> <!-- Neuer Button -->
+        <a href="freunde.html">Freunde</a>
     </div>
 
     <div class="container">
@@ -158,7 +126,7 @@
             <a href="https://www.roblox.com/de/users/5565076645/profile" target="_blank">Roblox Profil besuchen</a>
             <a href="https://www.roblox.com/de/communities/35060056/Die-Fl-sternen#!/about" target="_blank">Roblox Gruppe besuchen</a>
             <a href="https://discord.gg/HWtUsY8Cqd" target="_blank">Discord Server besuchen</a>
-            <a href="https://www.tiktok.com/@flue_sterer" target="_blank">TikTok besuchen</a> <!-- TikTok Link hinzugefügt -->
+            <a href="https://www.tiktok.com/@flue_sterer" target="_blank">TikTok besuchen</a>
         </div>
     </div>
 
@@ -168,9 +136,41 @@
 
     <!-- YouTube Video Container -->
     <div class="video-container">
-        <!-- Ersetze die Video-ID durch die ID deines neuesten YouTube-Videos -->
-        <iframe src="https://www.youtube.com/embed/c6HO0hxOonU?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="youtube-video" src="https://www.youtube.com/embed/c6HO0hxOonU?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
+    <script>
+        const videoIframe = document.getElementById('youtube-video');
+        let currentTime = localStorage.getItem('videoCurrentTime') || 0;
+
+        // Wenn die Seite geladen wird, setzen wir das Video auf den gespeicherten Zeitpunkt
+        videoIframe.src = `https://www.youtube.com/embed/c6HO0hxOonU?autoplay=1&mute=1&start=${currentTime}`;
+
+        // Event listener, um die aktuelle Zeit des Videos zu speichern
+        videoIframe.addEventListener('load', () => {
+            const player = videoIframe.contentWindow;
+
+            setInterval(() => {
+                player.postMessage('{"event":"command","func":"getCurrentTime","args":""}', '*');
+            }, 1000);
+
+            window.addEventListener('message', function(event) {
+                if (event.origin !== 'https://www.youtube.com') return;
+                const data = JSON.parse(event.data);
+                if (data.event === 'infoDelivery' && data.info && data.info.playerState === 1) { // Video läuft
+                    localStorage.setItem('videoCurrentTime', data.info.currentTime);
+                }
+            });
+        });
+
+        // Wenn der Benutzer den Tab wechselt, pausiert das Video
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                videoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            } else {
+                videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }
+        });
+    </script>
 </body>
 </html>
